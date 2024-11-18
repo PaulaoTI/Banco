@@ -37,7 +37,7 @@
             left: 10px;
         }
 
-        .label1:hover{
+        .label1:hover {
             background-color: #1725f1b9;
         }
 
@@ -162,13 +162,24 @@
         .entrarSaque:hover {
             transform: scale(1.2, 1.2);
         }
+
+        .perfil {
+            cursor: pointer;
+            height: 70px;
+            width: 70px;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.842);
+            position: absolute;
+            top: 15px;
+            left: 20px;
+        }
     </style>
 </head>
 
 <body>
 
     <div class="menu">
-        <label class="label1" id="labelConta">Conta</label>
+        <img src="imagens/perfil.webp" id="Conta" class="perfil" alt="perfil">
     </div>
     <img src="imagens/logo.jpg" class="logo" alt="logo">
 
@@ -181,7 +192,7 @@
     <div class="divDepositar">
         <img src="imagens/deposito.png" class="deposito" alt="deposito">
         <h1>Depósitar</h1>
-        <a href="Deposito.html">
+        <a href="deposito.html">
             <button class="entrarDepo">Vamos lá</button>
         </a>
     </div>
@@ -195,22 +206,20 @@
     </div>
 
     <script>
-        // Alternar a exibição do menu ao clicar no rótulo "Conta"
-        const labelConta = document.getElementById('labelConta');
+        const Conta = document.getElementById('Conta');
         const menuConta = document.getElementById('menuConta');
-        labelConta.addEventListener('click', (event) => {
-            event.stopPropagation(); // Evita que o click se propague e feche o menu
+        Conta.addEventListener('click', (event) => {
+            event.stopPropagation();
             menuConta.style.display = (menuConta.style.display === 'block') ? 'none' : 'block';
         });
 
         // Fechar o menu se clicar fora dele
         document.addEventListener('click', (event) => {
-            if (!labelConta.contains(event.target) && !menuConta.contains(event.target)) {
+            if (!Conta.contains(event.target) && !menuConta.contains(event.target)) {
                 menuConta.style.display = 'none';
             }
         });
     </script>
-
 </body>
 
 </html>
